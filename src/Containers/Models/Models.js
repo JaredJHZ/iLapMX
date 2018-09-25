@@ -1,0 +1,48 @@
+import React,{Component} from 'react';
+import classes from './Models.css';
+import Model from '../../Components/Model/Model';
+class Models extends Component {
+    state = {
+        models: [
+            {
+                name:'Razerx',
+                specifications: 
+                    {
+                        CPU:'Intel i5',
+                        RAM: 'Adata ddr4 8gb 2400 mhz',
+                        DISPLAY:'1920x1080px Amoled'
+                    }
+                ,
+                price:'3000$'
+            },
+            {
+                name:'Razor',
+                specifications: 
+                    {
+                        CPU:'Intel i7',
+                        RAM: 'Adata ddr4 16gb 2400 mhz',
+                        DISPLAY:'1920x1080px Amoled'
+                    }
+                ,
+                price:'7000$'
+            }
+        ]
+    }
+    render(){
+    const modelsA = this.state.models
+                        .map(
+                            (model, index) => <Model toogle={() => this.props.toogle(model, index)} key={index} name={model.name} specifications ={model.specifications}
+                            price={model.price}/>
+                        )
+        return (
+            <div className={classes.Models}>    
+                <h1 style={{textAlign:"center", color:'#3B32B3'}}>Nuestros modelos</h1>
+                <div className={classes.Cards}>
+                        {modelsA}
+                </div>
+            </div>
+        );
+    }
+}
+
+export default Models;

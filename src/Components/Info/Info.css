@@ -1,0 +1,38 @@
+.Info {
+    display: flex;
+    flex-flow: row;
+}
+
+.Info h1 {
+    text-align: center;
+    padding: 2px;
+    color: #985CF7;
+}
+
+.Right {
+    align-self: center;
+    margin: 0 25px;
+    flex: 7;
+}
+
+.Important {
+    color: #6646EE;
+    font-weight: bolder;
+}
+
+.i1 {
+    width: 700px;
+    align-self: center;
+}
+
+.Publicidad {
+    flex: 1;
+}
+
+
+
+@media(min-width:500){
+    .Info {
+        flex-flow: column;
+    }
+}

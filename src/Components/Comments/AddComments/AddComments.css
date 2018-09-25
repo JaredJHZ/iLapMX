@@ -1,0 +1,20 @@
+.AddComments {
+    display:flex;
+    flex-flow: column;
+    align-content: center;
+    align-items: center;
+    width: 50%;
+    background-color : #b38edb;
+    margin-bottom: 10px;
+}
+
+.AddComments textarea{
+    width: 80%;
+}
+
+.Button {
+    margin-top:25px;
+    margin-bottom: 10px;
+    display: block;
+    width: 20%;
+}
