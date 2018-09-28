@@ -11,7 +11,9 @@
     box-sizing: border-box;
     transition: all 0.3s ease-out;
     color:#60DBC6;
+    border-radius: 5px;
 }
+
 
 @media (min-width: 600px) { 
     .Modal {

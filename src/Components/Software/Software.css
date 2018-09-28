@@ -1,0 +1,27 @@
+.Software {
+    color: #f2f5ff;
+    background-color: #575af5;
+    width: 100%;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 15px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+.Software h1{
+    text-align: center;
+}
+.Software ul{
+    padding: 0;
+}
+.img img {
+    width: 150px;
+}
+.PreInstalled {
+    list-style: none;
+    color: #bbc9fd;
+    padding: 0;
+}

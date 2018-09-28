@@ -14,6 +14,6 @@
     display: block;
 }
 
-.NavigationItem a:hover {
-    color: white;
+.NavigationItem:hover {
+    color: rgb(219, 20, 20);
 }

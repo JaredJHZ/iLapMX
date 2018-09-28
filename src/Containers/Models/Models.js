@@ -36,7 +36,8 @@ class Models extends Component {
                         )
         return (
             <div className={classes.Models}>    
-                <h1 style={{textAlign:"center", color:'#3B32B3'}}>Nuestros modelos</h1>
+                <h1 className={classes.Important}>Nuestros modelos</h1>
+                <h3 className={classes.Important}>Da click para reservar alguno!</h3>
                 <div className={classes.Cards}>
                         {modelsA}
                 </div>

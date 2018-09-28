@@ -20,13 +20,21 @@ class Comments extends Component {
             user:'',
             comment:''
         };
-        const comments = [...this.state.comments];
-        comments.push(this.state.newComment);
-        this.setState({comments:comments, newComment: newComment});
+        let user = '@'+this.state.newComment.user;
+        let comment = {
+            user:user,
+            comment:this.state.newComment.comment
+        }
+        this.setState({newComment:comment},()=>{
+            const comments = [...this.state.comments];
+            comments.push(this.state.newComment);
+            this.setState({comments:comments, newComment: newComment});
+        });
+      
     }
     nameChange = (event) => {
         let comment = Object.assign({},this.state.newComment);
-        comment.user = '@'+event.target.value;
+        comment.user = event.target.value;
         this.setState({newComment:comment});
     }
     commentChange = (event) => {
@@ -48,7 +56,7 @@ class Comments extends Component {
                 <h1>Los comentarios de los clientes</h1>
                 {comments}
                 <h1>Deja un comentario</h1>
-                <AddComments userChange={this.nameChange} commentChange={this.commentChange} clicked={this.addCommentHandler} />
+                <AddComments comment={this.state.newComment} userChange={this.nameChange} commentChange={this.commentChange} clicked={this.addCommentHandler} />
             </div>
         );
     }

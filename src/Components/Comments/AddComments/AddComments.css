@@ -6,15 +6,23 @@
     width: 50%;
     background-color : #b38edb;
     margin-bottom: 10px;
+    border-radius: 5px;
 }
 
 .AddComments textarea{
     width: 80%;
+    font-size: 15px;
 }
 
 .Button {
     margin-top:25px;
     margin-bottom: 10px;
     display: block;
-    width: 20%;
+    width: 40%;
+    cursor: pointer;
+    background-color:#8696F8;
+}
+
+.Button:hover {
+    background-color:#573FD9;
 }

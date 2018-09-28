@@ -24,3 +24,4 @@ class modal extends Component {
 
 }   
 export default modal;
+

@@ -1,11 +1,15 @@
 //react main library
 import React,{Component} from 'react';
+//Scroll library
+
+
 //css
 import classes from './Home.css';
 // containers and components
 import Info from '../Components/Info/Info';
 import Models from './Models/Models';
 import Modal from '../Components/UI/Modal/Modal'
+import Software from '../Components/Software/Software';
 import Comments from '../Components/Comments/Comments/Comments';
 // high order component
 import Aux from '../HOC/aux';
@@ -18,7 +22,22 @@ class Home extends Component {
     vision: 'Ser la empresa de ventas de computadoras número 1 en México.',
     show: false,
     selected:null,
-    selectedIndex: null
+    selectedIndex: null,
+    software: 'Cargado con Elementary OS para brindar una experiencia de usuario fantastica',
+    apps : [
+        'Firefox',
+        'LibreOffice',
+        'GIMP',
+        'Audacity',
+        'Blender',
+        'Atom',
+        'Eclipse'
+    ]
+  }
+
+  componentDidMount() {
+     
+
   }
   toogleModalHandler = (product, index) => {
         
@@ -33,24 +52,41 @@ class Home extends Component {
         if(this.state.selected !== null ) {
           content =  (
                 <Modal show={this.state.show} toogle={this.toogleModalHandler}>
-                <div className={classes.Card} >
-                    <h1>{this.state.selected.name}</h1>
-                    <div className={classes.Image}><img src={images[this.state.selectedIndex]} alt="img"/></div>
-                    <h3>{this.state.selected.price}</h3>
-                </div>
+                    <div className={classes.Card} >
+                        <h1>{this.state.selected.name}</h1>
+                        <div className={classes.Image}><img src={images[this.state.selectedIndex]} alt="img"/></div>
+                        <h3>{this.state.selected.price}</h3>
+                        <div className={classes.buttons}>          
+                            <button className={classes.Cancel} onClick={this.toogleModalHandler}>Cancelar</button>
+                            <button className={classes.Confirm}>Reservar</button>
+                        </div>
+                    </div>
                 </Modal>
                     );
         }
         return (
             <Aux>
             {content}
-            <div className={classes.Home}>
-                <h1 className={classes.Title}>iLapMX</h1>
-                <Info mision={this.state.mision} vision={this.state.vision}/>
-                <Models toogle={this.toogleModalHandler} />
-                <Comments/>
+            <div name="Home" className={classes.Home}>
+                <div name="Info">
+                    <Info mision={this.state.mision} vision={this.state.vision}/>
+                </div>
+
+                   <div name="Software">
+                    <Software description={this.state.software} apps={this.state.apps} />
+                </div>
+
+                
+                <div name="Models">
+                    <Models toogle={this.toogleModalHandler} />
+                </div>
+                
+             
+                <div style={{width:'100%'}} name="Comments">
+                    <Comments/>
+                </div>
+
             </div>
-        
             </Aux>
             
         );
