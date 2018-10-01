@@ -4,7 +4,10 @@ import Toolbar from '../Navigation/Toolbar/Toolbar';
 import classes from './Layout.css';
 import Footer from '../../Components/UI/Footer/Footer';
 import MenuB from '../UI/MenuB/MenuB';
+import Contact from '../Contact/Contact';
 import * as Scroll from 'react-scroll';
+import {BrowserRouter, Route, Redirect} from 'react-router-dom';
+
 class Layout extends Component {
 
     state = {
@@ -55,21 +58,25 @@ class Layout extends Component {
 
     render () {
         return (
-            <div>
-                <MenuB clicked={this.topHandler} show={this.state.showButton} />
-                <header id ="header">
-                    <Toolbar navItems={this.state.navItems} />
-                </header>
-                <div  className={classes.Layout}>
-                    <Home/>
-                </div> 
-                <footer>
-                    <Footer>
-                        <h5>@JosafhatHZ</h5>
-                    </Footer>
-                </footer>
-     
-            </div>
+            <BrowserRouter>
+                <div>
+                    <MenuB clicked={this.topHandler} show={this.state.showButton} />
+                    <header id ="header">
+                        <Toolbar navItems={this.state.navItems} />
+                    </header>
+                    <div  className={classes.Layout}>
+                        <Route component={Contact} exact path='/contact' />
+                        <Route component={Home} path="/" exact />
+                        <Redirect to='/' />
+                    </div> 
+                    <footer>
+                        <Footer>
+                            <h5>@JosafhatHZ</h5>
+                        </Footer>
+                    </footer>
+        
+                </div>
+            </BrowserRouter>
         );
     }
 }

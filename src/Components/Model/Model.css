@@ -6,10 +6,12 @@
     cursor: pointer;
     color:white;
     padding: 20px;
+    transition: transform 1s;
 }
 .Model:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     background-color: #3B32B3;
+    transform: scale(1.1);
 }
 .Model h3 {
     text-align: center;

@@ -1,6 +1,7 @@
 import React from 'react';
 import NavigationItem from './NavigationItem/NavigationItem';
 import classes from './NavigationItems.css';
+import {NavLink} from 'react-router-dom';
 const navigationItem = (props) => {
     let navItems  = [];
     props.navItems
@@ -10,6 +11,7 @@ const navigationItem = (props) => {
     return (
         <ul className={classes.NavigationItems}>
             {navItems}
+            <NavLink to="/contact" className={classes.Link}>Contact</NavLink>
         </ul>
 
     )
