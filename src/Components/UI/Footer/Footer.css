@@ -4,9 +4,10 @@
     top:100%;
     left: 0;
     height: 60px;
-    background: #b38edb;
+    background-color: #3B32B3;
     margin-top:0;
     align-items: center;
     align-content: center;
     justify-content: center;
+    color: white;
 }

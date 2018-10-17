@@ -4,9 +4,10 @@
     align-content: center;
     align-items: center;
     width: 50%;
-    background-color : #b38edb;
+    background-color: rgba(9, 29, 56, 0.5);
     margin-bottom: 10px;
     border-radius: 5px;
+    color: white;
 }
 
 .AddComments textarea{
@@ -34,9 +35,10 @@
     display: block;
     width: 20%;
     cursor: pointer;
-    background-color:#8696F8;
+    background-color:#4602BA;
     height: 50px;
     font-size: 100%;
+    color: white;
 }
 
 .Button:hover {
@@ -50,7 +52,6 @@
         align-content: center;
         align-items: center;
         width: 90%;
-        background-color : #b38edb;
         margin-bottom: 10px;
         border-radius: 5px;
     }
