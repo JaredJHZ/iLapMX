@@ -1,5 +1,6 @@
 .Models {
     width: 100%;
+    margin-bottom: 15px;
 }
 
 .Cards {
@@ -10,7 +11,16 @@
 }
 
 .Important {
-    color:#3B32B3;
+    color:white;
     text-align: center;
 }
 
+@media (max-width:500px) {
+    .Models {
+        width: 100%;
+    }
+    .Cards{
+        display: block;
+        margin-top: 20%;
+    }
+}

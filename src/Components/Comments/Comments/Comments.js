@@ -2,6 +2,8 @@ import React,{Component} from 'react';
 import Comment from '../Comment/Comment';
 import AddComments from '../AddComments/AddComments';
 import classes from './Comments.css';
+import { Parallax } from 'react-parallax';
+import background from '../../../assets/img/comments.png'
 class Comments extends Component {
     state = {
         comments : [{
@@ -52,12 +54,19 @@ class Comments extends Component {
         }
         
         return (
+            <Parallax
+            blur={10}
+            bgImage={background}
+            bgImageAlt="the cat"
+            strength={200}
+            >
             <div  className={classes.Comments}>
                 <h1>Los comentarios de los clientes</h1>
                 {comments}
                 <h1>Deja un comentario</h1>
                 <AddComments comment={this.state.newComment} userChange={this.nameChange} commentChange={this.commentChange} clicked={this.addCommentHandler} />
             </div>
+            </Parallax>
         );
     }
    

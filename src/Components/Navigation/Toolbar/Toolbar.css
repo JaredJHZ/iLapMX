@@ -20,5 +20,15 @@
 
 .Link {
     text-decoration: none;
-    
+    color: white;
+}
+
+.Link:hover {
+    color: #EC0000;
+}
+
+@media (max-width:500px) {
+    .Toolbar {
+        display: none;
+    }
 }

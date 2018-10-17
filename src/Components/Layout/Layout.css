@@ -7,3 +7,8 @@
     background-color: #60DBC6;
 }
 
+@media (max-width:500px) {
+    .Layout {
+        display: block;
+    }
+}

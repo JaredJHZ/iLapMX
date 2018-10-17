@@ -18,10 +18,11 @@
 }
 
 .Link {
+  
     text-decoration: none;
-    
+    color: white;
 }
 
 .Link:hover {
-    color: #9D274E;
+    color: #EC0000;
 }

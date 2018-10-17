@@ -8,5 +8,20 @@
 }
 
 .Comments h1 {
-    color : #3B32B3;
+    color : white;
+}
+
+
+@media (max-width:500px) {
+    .Comments{
+        width: 100%;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    .Comments h1 {
+        margin: 20px;
+    }
 }

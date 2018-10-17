@@ -1,6 +1,6 @@
 .Software {
     color: #f2f5ff;
-    background-color: #575af5;
+    background-color: rgba(99, 59, 254, 0.7);
     width: 100%;
     border-radius: 5px;
     padding: 15px;
@@ -24,4 +24,11 @@
     list-style: none;
     color: #bbc9fd;
     padding: 0;
+}
+
+
+@media (max-width:500px) {
+    .Software {
+        width: 90%;
+    }
 }

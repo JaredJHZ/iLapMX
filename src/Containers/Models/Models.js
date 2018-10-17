@@ -1,6 +1,8 @@
 import React,{Component} from 'react';
 import classes from './Models.css';
 import Model from '../../Components/Model/Model';
+import { Parallax } from 'react-parallax';
+import background from '../../assets/img/laptop.jpeg';
 class Models extends Component {
     state = {
         models: [
@@ -35,6 +37,12 @@ class Models extends Component {
                             price={model.price}/>
                         )
         return (
+            <Parallax
+            blur={10}
+            bgImage={background}
+            bgImageAlt="the cat"
+            strength={200}
+            >
             <div className={classes.Models}>    
                 <h1 className={classes.Important}>Nuestros modelos</h1>
                 <h3 className={classes.Important}>Da click para reservar alguno!</h3>
@@ -42,6 +50,7 @@ class Models extends Component {
                         {modelsA}
                 </div>
             </div>
+            </Parallax>
         );
     }
 }

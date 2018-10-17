@@ -72,17 +72,17 @@ class Home extends Component {
                     <Info mision={this.state.mision} vision={this.state.vision}/>
                 </div>
 
-                   <div name="Software">
+                <div className={classes.Full} name="Software">
                     <Software description={this.state.software} apps={this.state.apps} />
                 </div>
 
                 
-                <div name="Models">
+                <div className={classes.Full} name="Models">
                     <Models toogle={this.toogleModalHandler} />
                 </div>
                 
              
-                <div style={{width:'100%'}} name="Comments">
+                <div className={classes.Full} style={{width:'100%'}} name="Comments">
                     <Comments/>
                 </div>
 

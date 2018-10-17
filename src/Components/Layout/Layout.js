@@ -6,7 +6,7 @@ import Footer from '../../Components/UI/Footer/Footer';
 import MenuB from '../UI/MenuB/MenuB';
 import Contact from '../Contact/Contact';
 import * as Scroll from 'react-scroll';
-import {BrowserRouter, Route, Redirect} from 'react-router-dom';
+import {BrowserRouter, Route} from 'react-router-dom';
 
 class Layout extends Component {
 
@@ -27,6 +27,11 @@ class Layout extends Component {
             ],
             showButton:false
         }
+
+    shouldComponentUpdate(prev,nextState) {
+        
+        return true;
+    }
     componentDidMount () {
         document.addEventListener('scroll', () => {
             if (window.scrollY < 200) {
@@ -67,7 +72,7 @@ class Layout extends Component {
                     <div  className={classes.Layout}>
                         <Route component={Contact} exact path='/contact' />
                         <Route component={Home} path="/" exact />
-                        <Redirect to='/' />
+                       
                     </div> 
                     <footer>
                         <Footer>

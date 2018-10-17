@@ -10,3 +10,22 @@
 .Comment p{
     font-size: 15px;
 }
+
+.Comment h5 {
+    margin: 0;
+}
+
+@media (max-width:500px) {
+    .Comment {
+        width: 90%;
+        padding: 5px;
+        height: 100px;
+        background-color:#CEABF3;
+        text-align: center;
+        margin-top:20px;
+        border-radius: 5px;
+    }
+    .Comment h5{
+        font-size: 20px;
+    }
+}
