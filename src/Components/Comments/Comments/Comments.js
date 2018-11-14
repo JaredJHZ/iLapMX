@@ -52,6 +52,25 @@ class Comments extends Component {
         if (this.state.comments.length < 1) {
             comments = null;
         }
+
+        let comment = (
+            <div  className={classes.Comments}>
+                <h1>Los comentarios de los clientes</h1>
+                {comments}
+                <h1>Se necesita estar registrado para hacer un comentario</h1>
+            </div>
+        );
+
+        if (this.props.logged) {
+            comment = (
+                <div  className={classes.Comments}>
+                    <h1>Los comentarios de los clientes</h1>
+                    {comments}
+                    <h1>Deja un comentario</h1>
+                    <AddComments comment={this.state.newComment} userChange={this.nameChange} commentChange={this.commentChange} clicked={this.addCommentHandler} />
+                </div>  
+            );
+        }
         
         return (
             <Parallax
@@ -60,14 +79,9 @@ class Comments extends Component {
             bgImageAlt="the cat"
             strength={200}
             >
-            <div  className={classes.Comments}>
-                <h1>Los comentarios de los clientes</h1>
-                {comments}
-                <h1>Deja un comentario</h1>
-                <AddComments comment={this.state.newComment} userChange={this.nameChange} commentChange={this.commentChange} clicked={this.addCommentHandler} />
-            </div>
-            </Parallax>
-        );
+                {comment}
+             </Parallax>
+        )
     }
    
 }

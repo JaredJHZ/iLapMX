@@ -2,12 +2,12 @@
     position: fixed;
     z-index: 500;
     background-color: #3B32B3;
-    width: 70%;
+    width: 30%;
     border: 1px solid #ccc;
     box-shadow: 1px 1px 1px black;
     padding: 16px;
-    left: 15%;
-    top: 30%;
+    left: 35%;
+    top: 25%;
     box-sizing: border-box;
     transition: all 0.3s ease-out;
     color:#60DBC6;
@@ -20,9 +20,82 @@
     margin-bottom: 20px;
 }
 
-@media (min-width: 600px) { 
+.Login {
+    position: fixed;
+    z-index: 500;
+    background-color: #3B32B3;
+    width: 50%;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px black;
+    padding: 16px;
+    left: 25%;
+    top: 30%;
+    box-sizing: border-box;
+    transition: all 0.3s ease-out;
+    color:#60DBC6;
+    border-radius: 5px;
+}
+
+.Login h1 {
+    text-align: center;
+}
+
+.Login input {
+    margin:30px;
+}
+
+.Modal button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    font: inherit;
+    padding: 10px;
+    margin: 30px;
+    font-weight: bold;
+}
+
+.Modal button:hover {
+    background-color: #4B6E80;
+}
+
+
+.Login button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    font: inherit;
+    padding: 10px;
+    margin: 20px;
+    margin-left: 60px;
+    font-weight: bold;
+}
+
+.Login input{
+    width: 70%;
+    margin: 10px 70px;
+}
+
+.Login button:hover {
+    background-color: #4B6E80;
+}
+
+
+
+
+
+@media (max-width: 414px) { 
     .Modal {
-        width: 500px;
-        left: calc(50% - 250px);
+        width: 400px;
+        height: 450px;
+        left: calc(50% - 200px);
+    }
+    .Login {
+        width: 400px;
+        height: 300px;
+        left: calc(50% - 200px);
     }
 }

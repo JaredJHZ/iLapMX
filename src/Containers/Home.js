@@ -2,6 +2,8 @@
 import React,{Component} from 'react';
 //Scroll library
 
+// redux
+import {connect} from 'react-redux';
 
 //css
 import classes from './Home.css';
@@ -16,7 +18,11 @@ import Aux from '../HOC/aux';
 //images assets
 import image1 from '../assets/img/2.jpg';
 import image2 from '../assets/img/3.jpeg';
+
+import * as actionTypes from '../store/actions/actions';
+
 class Home extends Component {
+    
   state = {
     mision: 'Nuestra misión es ser una impresa innovadora en el sector de la computación en México , ayudando al cliente a crear un equipo de computo con un precio justo y que cumpla con sus necesidades.',
     vision: 'Ser la empresa de ventas de computadoras número 1 en México.',
@@ -36,8 +42,7 @@ class Home extends Component {
   }
 
   componentDidMount() {
-     
-
+        this.props.isLogged();
   }
   toogleModalHandler = (product, index) => {
         
@@ -64,9 +69,12 @@ class Home extends Component {
                 </Modal>
                     );
         }
+        let login = null;
+      
         return (
             <Aux>
             {content}
+            {login}
             <div name="Home" className={classes.Home}>
                 <div name="Info">
                     <Info mision={this.state.mision} vision={this.state.vision}/>
@@ -83,7 +91,7 @@ class Home extends Component {
                 
              
                 <div className={classes.Full} style={{width:'100%'}} name="Comments">
-                    <Comments/>
+                    <Comments logged={this.props.logged} />
                 </div>
 
             </div>
@@ -93,5 +101,18 @@ class Home extends Component {
     }
 }
 
+const mapStateToProps = state => {
+    return  {
+        logged: state.logged,
+        user :state.user
+    };
+}
 
-export default Home;
+const mapDispatchToProps = dispatch => {
+    return {
+        isLogged: () => dispatch({type:'ISLOGGED'})
+    };
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

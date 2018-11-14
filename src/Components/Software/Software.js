@@ -3,7 +3,7 @@ import classes from './Software.css';
 import PreInstalled from './PreInstalled';
 import logo from '../../assets/img/elogo.png';
 import { Parallax } from 'react-parallax';
-import background from '../../assets/img/linux.png';
+import background from '../../assets/img/elementary.png';
 const software = (props) => {
     const apps = props.apps.map(
         (app) => <PreInstalled key={app} software={app} />

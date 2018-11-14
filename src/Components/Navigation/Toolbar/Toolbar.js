@@ -11,7 +11,7 @@ const toolbar = (props) => {
             <NavLink className={classes.Link} to='/'>iLapMX</NavLink>
         </div>
         <nav className={classes.Nav}>
-            <NavigationItems navItems={props.navItems} />
+            <NavigationItems isLogged={props.isLogged} user={props.user} navItems={props.navItems} login={props.login} />
         </nav>
     </div>
     )

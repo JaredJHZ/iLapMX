@@ -7,8 +7,21 @@
     background-color: #60DBC6;
 }
 
+.login{
+    text-align: center;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.login h1 {
+    text-align: center;
+}
+
 @media (max-width:500px) {
     .Layout {
         display: block;
     }
 }
+

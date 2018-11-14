@@ -17,3 +17,23 @@
 .NavigationItem:hover {
     color: black;
 }
+
+.custom{
+    margin:10px 10px;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    cursor: pointer;
+}
+
+.custom a {
+    color: #60DBC6;
+    text-decoration: none;
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+}
+
+.custom:hover {
+    color: black;
+}
