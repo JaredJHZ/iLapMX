@@ -28,8 +28,9 @@
 
 
 
-@media (max-width:500px) {
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px){
     .Model {
-      width: 340px;
+      width: 91%;
+      margin: 30px auto;
     }
 }

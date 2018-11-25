@@ -90,7 +90,7 @@ class Home extends Component {
                 
              
                 <div className={classes.Full} style={{width:'100%'}} name="Comments">
-                    <Comments logged={this.props.logged} />
+                    <Comments logged={this.props.logged} user={this.props.user} />
                 </div>
 
             </div>

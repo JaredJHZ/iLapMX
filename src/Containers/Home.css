@@ -18,7 +18,7 @@
 .Image img {
     width: 100%;
     margin: 15px;
-    height: 124px;
+    height: 224px;
 }
 .Card {
     display: flex;
@@ -36,7 +36,7 @@
     color: black;
 }
 .Title {
-    color: #3B32B3;
+    color: black;
     text-align: center;
 }
 .buttons {
@@ -54,7 +54,7 @@
 }
 .buttons button:hover {
 
-    background-color: #3B32B3;
+    background-color: black;
     color: white;
 
 }
@@ -69,4 +69,10 @@
 .Full {
     width: 100%;
 }
-
+@media only screen and (min-device-width : 375px) and (max-device-width : 667px){
+    .Image img {
+        width: 100%;
+        margin: 15px;
+        height: 124px;
+    }
+}

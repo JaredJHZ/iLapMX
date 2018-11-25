@@ -21,10 +21,12 @@
 .Link {
     text-decoration: none;
     color: white;
+    cursor: pointer;
 }
 
 .Link:hover {
-    color: #EC0000;
+    color: #83F7EF;
+    font-weight: bolder;
 }
 
 @media (max-width:500px) {

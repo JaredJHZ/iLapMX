@@ -23,6 +23,10 @@
 .AddComments input {
     width: 60%;
     height: 50px;
+    background: transparent;
+    text-align: center;
+    font-size: 30px;
+    color: #966F33;
 }
 
 .AddComments textarea {
@@ -35,14 +39,15 @@
     display: block;
     width: 20%;
     cursor: pointer;
-    background-color:#4602BA;
+    background-color:#966F33;
     height: 50px;
     font-size: 100%;
     color: white;
 }
 
 .Button:hover {
-    background-color:#573FD9;
+    background-color:#def7f5;
+    color: black;
 }
 
 @media (max-width:500px) {
@@ -62,7 +67,6 @@
     display: block;
     width: 40%;
     cursor: pointer;
-    background-color:#8696F8;
     height: 50px;
     font-size: 100%;
 }

@@ -57,7 +57,7 @@ class Register extends Component {
        
         
         return (
-            <div>
+            <div className={classes.Layout}>
                 {this.redirect}
                 <div className={classes.Register}>
                     <h3  className={classes.Title} >Registrar usuario </h3>

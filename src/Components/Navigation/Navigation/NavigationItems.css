@@ -20,11 +20,10 @@
 }
 
 .Link {
-  
     text-decoration: none;
     color: white;
 }
 
 .Link:hover {
-    color: black;
+    color: #83F7EF;
 }

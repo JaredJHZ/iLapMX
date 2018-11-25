@@ -37,15 +37,47 @@ input {
     background-color:#FFFFFF;
     text-align:center;
     transition: all 0.15s;
+    cursor: pointer;
 }
 .Button:hover{
     text-shadow: 0 0 2em rgba(255,255,255,1);
-    color:blue;
-    border-color:blue;
+    color:#966F33;
+    border-color:#966F33;
 }
-@media all and (max-width:30em){
+
+.Layout {
+    height: 808px;
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
   .Button{
     display:block;
     margin:0.4em auto;
     }
+  .Layout {
+      height: 537px;
+  }
+}
+@media only screen and (min-device-width: 411px) and (max-device-height: 731px) and (orientation : portrait){
+    .Layout {
+        height: 601px;
+    }
+}
+
+@media only screen and (min-device-width: 411px) and (max-device-height: 823px) and (orientation : portrait){
+    .Layout {
+        height: 693px;
+    }
+}
+@media only screen and (min-device-width: 411px) and (max-device-height: 823px) and (orientation : portrait){
+    .Layout {
+        height: 693px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .Layout {
+        height: 840px;
+    }
+   
 }

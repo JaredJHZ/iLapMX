@@ -75,6 +75,8 @@
     border-bottom: 2px solid black;
     outline: none;
     margin-right: 5%;
+    margin-left:27%;
+    display: block;
   
 }
 
@@ -102,27 +104,12 @@
 
 
 
-@media (max-width: 414px) { 
-    .Modal {
-        width: 350px;
-        height: 400px;
-        left: calc(50% - 178px);
-    }
-    .Login {
-        width: 300px;
-        height: 300px;
-        left: calc(50% - 178px);
-    }
-    .Login input{
-        margin-right: 0%;
-        margin-bottom: 5%;
-    }
-}
 
-@media(max-width: 1250px) {
+@media only screen and (min-device-width : 375px) and (max-device-width : 667px){
     .Login{
         width: 350px;
         height: 250px;
+        left: 4%;
     }
     .Login input{
         background-color: transparent;
@@ -131,6 +118,7 @@
         border-bottom: 2px solid black;
         outline: none;
         margin-right: 5%;
+        margin-left: 15%;
     }
 
     .Login form {
@@ -138,6 +126,31 @@
     }
 
     .Login button{
+        margin-top: 0;
+        margin-bottom: 5px;
+        margin-right: 40px;
+    }
+
+    .Modal{
+        width: 350px;
+        height: 370px;
+        left: 4%;
+    }
+    .Modal input{
+        background-color: transparent;
+        margin-bottom: 5%;
+        border:0;
+        border-bottom: 2px solid black;
+        outline: none;
+        margin-right: 5%;
+        margin-left: 15%;
+    }
+
+    .Modal form {
+        margin-top: 10px;
+    }
+
+    .Modal button{
         margin-top: 0;
         margin-bottom: 5px;
         margin-right: 40px;

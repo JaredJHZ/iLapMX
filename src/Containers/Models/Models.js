@@ -1,8 +1,7 @@
 import React,{Component} from 'react';
 import classes from './Models.css';
 import Model from '../../Components/Model/Model';
-import { Parallax } from 'react-parallax';
-import background from '../../assets/img/laptop.jpeg';
+
 class Models extends Component {
     state = {
         models: [

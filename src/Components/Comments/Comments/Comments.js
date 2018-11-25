@@ -2,14 +2,11 @@ import React,{Component} from 'react';
 import Comment from '../Comment/Comment';
 import AddComments from '../AddComments/AddComments';
 import classes from './Comments.css';
-import { Parallax } from 'react-parallax';
-import background from '../../../assets/img/comments.png'
+import {axios} from '../../../axios';
+
 class Comments extends Component {
     state = {
-        comments : [{
-            user:'@Jared',
-            comment:'Gran propuesta, esperamos el crowfunding!'
-        }],
+        comments : [],
         newComment: {
             user:'',
             comment:''
@@ -17,21 +14,51 @@ class Comments extends Component {
         x:null
     }
 
+    getAllComments = ()=> {
+        axios.get('/comments/get').then(
+            (data) => {
+                console.log(data);
+                const comments = data.data;
+                this.setState({
+                    ...this.state,
+                    comments: comments
+                });
+            }
+        )
+    }
+
+    componentDidMount() {
+        this.getAllComments();
+        setTimeout(() => {
+            let user = JSON.parse(this.props.user);
+            user = user.user;
+            let newComment = {
+                ...this.state.newComment,
+                user: user
+            };
+            this.setState({
+                ...this.state,
+                newComment: newComment
+            })
+        }, 1000);
+    }
+
     addCommentHandler = () => {
         let newComment = {
             user:'',
             comment:''
         };
-        let user = '@'+this.state.newComment.user;
+        let userid = JSON.parse(this.props.user);
+        userid = userid.id;
         let comment = {
-            user:user,
+            user: userid,
             comment:this.state.newComment.comment
         }
-        this.setState({newComment:comment},()=>{
-            const comments = [...this.state.comments];
-            comments.push(this.state.newComment);
-            this.setState({comments:comments, newComment: newComment});
-        });
+        axios.post('/comments/create', comment).then(
+            (data)=> {
+                this.getAllComments();
+            }
+        )
       
     }
     nameChange = (event) => {
@@ -62,12 +89,13 @@ class Comments extends Component {
         );
 
         if (this.props.logged) {
+          
             comment = (
                 <div  className={classes.Comments}>
                     <h1>Los comentarios de los clientes</h1>
                     {comments}
                     <h1>Deja un comentario</h1>
-                    <AddComments comment={this.state.newComment} userChange={this.nameChange} commentChange={this.commentChange} clicked={this.addCommentHandler} />
+                    <AddComments  comment={this.state.newComment} userChange={this.nameChange} commentChange={this.commentChange} clicked={this.addCommentHandler} />
                 </div>  
             );
         }
