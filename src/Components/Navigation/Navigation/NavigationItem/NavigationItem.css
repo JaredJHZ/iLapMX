@@ -4,6 +4,7 @@
     display: block;
     width: 100%;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .NavigationItem a {
@@ -36,4 +37,10 @@
 
 .custom:hover {
     color: black;
+}
+
+@media (max-width:500px) {
+    .NavigationItem {
+        border-bottom: 1px solid white;
+    }
 }

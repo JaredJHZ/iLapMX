@@ -11,7 +11,7 @@ const logo = (props) => {
     } else {
         sizeClass = 'XL'
     }
-    return (<img src={icon} className={classes[sizeClass]} alt=''></img>)
+    return (<img src={icon} onClick={props.click} className={classes[sizeClass]} alt=''></img>)
 };
 
 export default logo;

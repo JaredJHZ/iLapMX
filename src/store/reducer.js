@@ -27,6 +27,15 @@ const reducer = (state = initialState, action) => {
             }
         }
     }
+
+    if (action.type === 'ONLOGOUT'){
+        localStorage.clear();
+        return {
+            ...state,
+            user:null,
+            logged: false
+        }
+    }
     
     return state;
 }

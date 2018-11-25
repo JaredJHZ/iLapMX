@@ -13,7 +13,7 @@ const login = (user, logged)=> {
 
 }
 
-const actionLogin = (user, password) => {
+const actionLogin = (user, password, close) => {
     return function(dispatch) {
         let log = {
             email: user,
@@ -23,9 +23,12 @@ const actionLogin = (user, password) => {
             (data) => {
                 localStorage.setItem('token', data.data.token)
                 localStorage.setItem('usuario', JSON.stringify(data.data.user));
+                if (close) {
+                    close();
+                }
                 dispatch(login(data.data.user,true));
             }
-        ).catch(error => dispatch(login('error',true)));
+        ).catch(error => dispatch(login('error',false)));
     }
 }
 

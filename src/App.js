@@ -11,9 +11,9 @@ const store = createStore(reducer, applyMiddleware(thunk));
 class App extends Component {
   render() {
     return (
-      <Provider store={store}>
-        <Layout/>
-      </Provider>
+        <Provider store={store}>
+          <Layout/>
+        </Provider>
       
     );
   }

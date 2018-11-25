@@ -9,12 +9,13 @@ const Model = (props) => {
                         
     return (
     <div onClick={props.toogle} className={classes.Model}>
-        <h3>{props.name}</h3>
-        <h3>Spec</h3>
+        <div className={classes.Title}>
+            <h3>{props.name}</h3>
+        </div>
         <ul>
             {specifications}
         </ul>
-        <h2>{props.price}</h2>   
+        <h3> {props.price} </h3>   
     </div>);
 }
 

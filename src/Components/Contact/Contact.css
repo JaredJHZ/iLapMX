@@ -1,5 +1,21 @@
 .Contact {
     color: black;
     width: 100%;
-    background-color:blueviolet;
+    height: 100%;
+    background-color:#966F33;
+    text-align: center;
+}
+
+.NoMargin {
+    margin: 0;
+}
+
+.Img {
+    width: 28%;
+}
+
+@media (max-width:500px) {
+    .Img {
+        width: 73%;
+    }
 }

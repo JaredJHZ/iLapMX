@@ -19,7 +19,6 @@ import Aux from '../HOC/aux';
 import image1 from '../assets/img/2.jpg';
 import image2 from '../assets/img/3.jpeg';
 
-import * as actionTypes from '../store/actions/actions';
 
 class Home extends Component {
     

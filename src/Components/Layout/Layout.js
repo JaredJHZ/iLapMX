@@ -12,8 +12,9 @@ import Modal from '../../Components/UI/Modal/Modal';
 import {connect} from 'react-redux';
 import * as actionTypes from '../../store/actions/actions'
 
-import Input from '../Input/Input';
-import { throws } from 'assert';
+import Sidedraw from '../Navigation/Sidedraw/Sidedraw';
+
+import NewUser from '../NewUser/Register';
 
 class Layout extends Component {
 
@@ -37,13 +38,17 @@ class Layout extends Component {
             user : {
                 email:'',
                 password:''
-            }
+            },
+            show: true
         }
 
     shouldComponentUpdate(prev,nextState) {
         
         return true;
     }
+
+
+
     componentDidMount () {
         document.addEventListener('scroll', () => {
             if (window.scrollY < 200) {
@@ -51,6 +56,15 @@ class Layout extends Component {
             }
             if (window.scrollY > 50) {
                 this.showButtonHandler();
+            }
+        })
+    }
+
+    showSideHandler = () => {
+        this.setState((prevState) => {
+            return {
+                ...prevState,
+                show: !prevState.show
             }
         })
     }
@@ -95,36 +109,33 @@ class Layout extends Component {
     }
 
     render () {
+
         let login = null;
         if (this.state.loginModal === true ) {
             login = (
             <Modal login={true} clicked={this.toogleLoginHandler} show={this.state.loginModal}>
                     <h1>Login</h1>
                             <form>
-                                <input type="text" value={this.state.user.email}  onChange={(e) => this.emailChangeHandler(e)}/>
-                                <input type="password" value={this.state.user.password}  onChange={(e) => this.passwordChangeHandler(e)}/>
+                                <input className={classes.Input} placeholder="Usuario" type="text" value={this.state.user.email}  onChange={(e) => this.emailChangeHandler(e)}/>
+                                <input placeholder="Contraseña" type="password" value={this.state.user.password}  onChange={(e) => this.passwordChangeHandler(e)}/>
                             </form>
-                             <button onClick={() => this.props.onLogin(this.state.user.email, this.state.user.password)}>Login</button>
+                             <button onClick={() => this.props.onLogin(this.state.user.email, this.state.user.password, this.toogleLoginHandler)}>Login</button>
                              <button onClick={this.toogleLoginHandler}>Cerrar</button>
             </Modal>);
-         }
-         let isLogged = null;
-         if (this.props.logged) {
-             isLogged = <h1>logged</h1>;
          }
         return (
             <BrowserRouter>
                 <div>
                 {login}
-                {isLogged}
                     <MenuB clicked={this.topHandler} show={this.state.showButton} />
                     <header id ="header">
-                        <Toolbar isLogged={this.props.logged} user={this.props.user} login={this.toogleLoginHandler} navItems={this.state.navItems} />
+                        <Toolbar click={this.showSideHandler} logout={this.props.onLogout} isLogged={this.props.logged} user={this.props.user} login={this.toogleLoginHandler} navItems={this.state.navItems} />
+                        <Sidedraw click={this.showSideHandler} logout={this.props.onLogout} isLogged={this.props.logged} user={this.props.user} login={this.toogleLoginHandler} navItems={this.state.navItems} show={!this.state.show}  opened={this.showSideHandler}></Sidedraw>
                     </header>
                     <div  className={classes.Layout}>
                         <Route component={Contact} exact path='/contact' />
+                        <Route component={NewUser} path="/register" />
                         <Route component={Home} path="/" exact />
-                       
                     </div> 
                     <footer>
                         <Footer>
@@ -148,7 +159,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onLogin: (email, password) => dispatch(actionTypes.actionLogin(email, password))
+        onLogin: (email, password, close) => dispatch(actionTypes.actionLogin(email, password, close)),
+        onLogout: () => dispatch({type:'ONLOGOUT'})
     };
 }
 

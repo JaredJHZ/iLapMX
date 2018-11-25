@@ -1,16 +1,8 @@
 import React from 'react';
 import classes from './Info.css';
 import img1 from '../../assets/img/1.png';
-import background from '../../assets/img/circuit.jpg';
-import { Parallax } from 'react-parallax';
 const info = (props) => {
     return (
-        <Parallax
-            blur={10}
-            bgImage={background}
-            bgImageAlt="background"
-            strength={200}
-        >
         <div className={classes.Info}>
             <section className={classes.Right}>
             <div className={classes.Header}>
@@ -38,9 +30,7 @@ const info = (props) => {
             </div>
           
             </section>
-        </div>
-        </Parallax>
-    
+        </div>    
     );
 }
 

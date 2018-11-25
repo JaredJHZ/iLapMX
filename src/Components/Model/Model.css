@@ -1,12 +1,13 @@
 .Model {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    margin-left: 30px;
-    background-color:#4602BA;
+    background-color:  #def7f5;
+    border-radius: 5px;
+    padding: 10px 0;
+    border: 2px solid #966F33;
+    margin: 10px 20px;
+    text-align: center;
     cursor: pointer;
-    color:white;
-    padding: 20px;
     transition: transform 1s;
+    padding: 10px;
 }
 .Model:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
@@ -14,24 +15,21 @@
 }
 .Model h3 {
     text-align: center;
-    color:white;
+    color:black;
 }
 .Model h2 {
     text-align: center;
+    color: black;
 }
+
+.Title {
+    border-bottom: 3px solid #966F33
+}
+
 
 
 @media (max-width:500px) {
     .Model {
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-        transition: 0.3s;
-        background-color:#6646EE;
-        cursor: pointer;
-        color:white;
-        padding: 20px;
-        transition: transform 1s;
-        width: 90%;
-        margin: auto;
-        margin-top: 30px;
+      width: 340px;
     }
 }

@@ -73,14 +73,9 @@ class Comments extends Component {
         }
         
         return (
-            <Parallax
-            blur={10}
-            bgImage={background}
-            bgImageAlt="the cat"
-            strength={200}
-            >
+            <div>
                 {comment}
-             </Parallax>
+            </div>
         )
     }
    

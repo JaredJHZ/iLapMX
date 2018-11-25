@@ -9,12 +9,14 @@
     width: 100%;
     box-sizing: border-box;
     justify-content: space-between;
+
 }
 
-@media(min-width:500px) {
-    .NavigationItems{
-        flex-flow: row; 
-    }
+
+@media (max-width:500px) {
+ .NavigationItems {
+     flex-flow: column;
+ }
 }
 
 .Link {

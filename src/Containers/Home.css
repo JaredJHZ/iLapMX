@@ -8,6 +8,7 @@
     flex-flow: column;
     align-items: center;
     justify-content: center;
+    color: black;
 }
 
 .Image {
@@ -16,6 +17,8 @@
 
 .Image img {
     width: 100%;
+    margin: 15px;
+    height: 124px;
 }
 .Card {
     display: flex;
@@ -25,10 +28,12 @@
 .Card h1{
     text-align: center;
     flex-flow: column;
+    color: black;
 }
 
 .Card h3 {
     text-align: center;
+    color: black;
 }
 .Title {
     color: #3B32B3;
@@ -64,3 +69,4 @@
 .Full {
     width: 100%;
 }
+

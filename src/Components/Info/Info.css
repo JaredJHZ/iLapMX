@@ -18,7 +18,7 @@
 .Info h1 {
     text-align: center;
     padding: 2px;
-    color: black;
+    color: #966F33;
 }
 
 .Right {
@@ -44,39 +44,49 @@
 }
 
 .Mision {
-    background-color:  rgba(9, 29, 56, 0.5);
-    font-weight: bolder;
+    background-color:  #def7f5;
     border-radius: 5px;
-    padding: 15px;
-    margin-top:15px;
-    transition: all 0.5s;
-    color: white;
+    padding: 10px 0;
+    border: 2px solid #966F33;
+    margin: 10px 0;
+    text-align: center;
+    cursor: pointer;
 }
 
 .Mision:hover {
     transform: scale(1.01);
+    background-color: #83f7ef;
 }
 
 .Vision {
-    background-color:  rgba(9, 29, 56, 0.5);
-    font-weight: bolder;
+    background-color:  #def7f5;
     border-radius: 5px;
-    padding: 15px;
-    margin-top:15px;
-    transition: all 0.5s;
-    color: white;
+    padding: 10px 0;
+    border: 2px solid #966F33;
+    margin: 10px 0;
+    text-align: center;
+    cursor: pointer;
 }
 
 .Vision:hover {
     transform: scale(1.01);
+    background-color: #83f7ef;
 }
 
 .Mision h1 {
     color: black;
+    border-bottom: 3px solid #966F33;
+    width: 95%;
+    margin: auto;
 }
 .Vision h1 {
     color: black;
+    border-bottom: 3px solid #966F33;
+    width: 95%;
+    margin: auto;
 }
+
+
 
 @media (max-width:500px) {
     .Info {
@@ -92,7 +102,7 @@
         font-size: 50px;
         margin: 0;
         width: 100%;
-        color: white;
+        color: black;
     }
     .img {
         width: 250px;
@@ -119,23 +129,16 @@
         text-align: center;
     }
     .Mision {
-        font-weight: bolder;
-        border-radius: 5px;
-        padding: 15px;
-        margin-top:15px;
         transition: all 0.5s;
-        color: white;
     }
     .Mision h1 {
-        background: transparent;
+        font-size: 50px;
+        margin: 0;
+        width: 100%;
+        color: black;
     }
     .Vision {
-        font-weight: bolder;
-        border-radius: 5px;
-        padding: 15px;
-        margin-top:15px;
         transition: all 0.5s;
-        color: white;
     }
 
 }

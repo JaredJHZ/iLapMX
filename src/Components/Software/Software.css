@@ -1,15 +1,12 @@
 .Software {
-    color: #f2f5ff;
-    background-color: rgba(9, 29, 56, 0.5);
-    width: 100%;
+    background-color:  #def7f5;
     border-radius: 5px;
-    padding: 15px;
-    margin: 15px;
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
+    padding: 10px 0;
+    border: 2px solid #966F33;
+    margin: 10px 0;
+    text-align: center;
+    cursor: pointer;
+    margin: 5px;
 }
 .Software h1{
     text-align: center;
@@ -22,13 +19,25 @@
 }
 .PreInstalled {
     list-style: none;
-    color: #bbc9fd;
+    color: black;
     padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-flow: row;
+    flex-basis: auto;
+    align-content: space-between;
+    margin:2%;
+    width: 100%;
 }
 
 
 @media (max-width:500px) {
     .Software {
         width: 90%;
+        margin:20px;
+    }
+    .PreInstalled {
+        flex-flow: column;
+        display: none;
     }
 }

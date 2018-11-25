@@ -1,53 +1,33 @@
 .Modal {
     position: fixed;
     z-index: 500;
-    background-color: #3B32B3;
+    background-color:  #def7f5;
     width: 30%;
     border: 1px solid #ccc;
     box-shadow: 1px 1px 1px black;
-    padding: 16px;
+    padding: 10px 0;
     left: 35%;
     top: 25%;
     box-sizing: border-box;
     transition: all 0.3s ease-out;
     color:#60DBC6;
     border-radius: 5px;
+    margin: 10px 0;
+    text-align: center;
+    cursor: pointer;
 }
 
 .Modal h1 {
-    margin: 0;
-    margin-top:20px;
-    margin-bottom: 20px;
-}
-
-.Login {
-    position: fixed;
-    z-index: 500;
-    background-color: #3B32B3;
-    width: 50%;
-    border: 1px solid #ccc;
-    box-shadow: 1px 1px 1px black;
-    padding: 16px;
-    left: 25%;
-    top: 30%;
-    box-sizing: border-box;
-    transition: all 0.3s ease-out;
-    color:#60DBC6;
-    border-radius: 5px;
-}
-
-.Login h1 {
-    text-align: center;
-}
-
-.Login input {
-    margin:30px;
+    color: black;
+    border-bottom: 3px solid #966F33;
+    width: 95%;
+    margin: auto;
 }
 
 .Modal button {
     background-color: transparent;
     border: none;
-    color: white;
+    color: black;
     outline: none;
     cursor: pointer;
     font: inherit;
@@ -61,41 +41,105 @@
 }
 
 
+.Login {
+    position: fixed;
+    z-index: 500;
+    background-color:  #def7f5;
+    width: 30%;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px black;
+    padding: 10px 0;
+    left: 35%;
+    top: 25%;
+    box-sizing: border-box;
+    transition: all 0.3s ease-out;
+    color:#60DBC6;
+    border-radius: 5px;
+    margin: 10px 0;
+    text-align: center;
+    cursor: pointer;
+    height: 280px;
+}
+
+.Login h1 {
+    color: black;
+    border-bottom: 3px solid #966F33;
+    width: 95%;
+    margin: auto;
+}
+
+.Login input {
+    background-color: transparent;
+    margin-bottom: 5%;
+    border:0;
+    border-bottom: 2px solid black;
+    outline: none;
+    margin-right: 5%;
+  
+}
+
 .Login button {
     background-color: transparent;
     border: none;
-    color: white;
+    color: black;
     outline: none;
     cursor: pointer;
     font: inherit;
-    padding: 10px;
-    margin: 20px;
-    margin-left: 60px;
+    padding: 5px;
+    margin-right: 35px;
     font-weight: bold;
+    margin-bottom: 5px;
 }
 
-.Login input{
-    width: 70%;
-    margin: 10px 70px;
-}
 
 .Login button:hover {
-    background-color: #4B6E80;
+    border-bottom: 1px solid #966F33;
 }
 
-
+.Login form {
+    margin-top: 10px;
+}
 
 
 
 @media (max-width: 414px) { 
     .Modal {
-        width: 400px;
-        height: 450px;
-        left: calc(50% - 200px);
+        width: 350px;
+        height: 400px;
+        left: calc(50% - 178px);
     }
     .Login {
-        width: 400px;
+        width: 300px;
         height: 300px;
-        left: calc(50% - 200px);
+        left: calc(50% - 178px);
+    }
+    .Login input{
+        margin-right: 0%;
+        margin-bottom: 5%;
+    }
+}
+
+@media(max-width: 1250px) {
+    .Login{
+        width: 350px;
+        height: 250px;
+    }
+    .Login input{
+        background-color: transparent;
+        margin-bottom: 5%;
+        border:0;
+        border-bottom: 2px solid black;
+        outline: none;
+        margin-right: 5%;
+    }
+
+    .Login form {
+        margin-top: 10px;
+    }
+
+    .Login button{
+        margin-top: 0;
+        margin-bottom: 5px;
+        margin-right: 40px;
     }
 }

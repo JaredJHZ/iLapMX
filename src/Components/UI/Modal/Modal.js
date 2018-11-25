@@ -6,6 +6,7 @@ class modal extends Component {
     shouldComponentUpdate(nextProps, nextState) {
         return true;
     }
+
     render(){
         let clas = classes.Modal;
         if (this.props.login) {
@@ -13,15 +14,15 @@ class modal extends Component {
         }
         return (
             <Aux>
-            <Backdrop show={this.props.show} clicked={this.props.clicked}/>
-            <div className={clas}
-                style = {{
-                    transform: this.props.show ? 'translateY(0)': 'translateY(-70vh)',
-                    opacity: this.props.show ? '1':'0'
-                }}
-            >
-                {this.props.children}
-            </div>
+                <Backdrop show={this.props.show} clicked={this.props.clicked}/>
+                <div className={clas}
+                    style = {{
+                        transform: this.props.show ? 'translateY(0)': 'translateY(-70vh)',
+                        opacity: this.props.show ? '1':'0'
+                    }}
+                >
+                    {this.props.children}
+                </div>
             </Aux>
         );
       } 
