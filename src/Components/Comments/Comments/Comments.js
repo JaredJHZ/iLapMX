@@ -17,7 +17,6 @@ class Comments extends Component {
     getAllComments = ()=> {
         axios.get('/comments/get').then(
             (data) => {
-                console.log(data);
                 const comments = data.data;
                 this.setState({
                     ...this.state,
@@ -30,16 +29,24 @@ class Comments extends Component {
     componentDidMount() {
         this.getAllComments();
         setTimeout(() => {
-            let user = JSON.parse(this.props.user);
-            user = user.user;
-            let newComment = {
-                ...this.state.newComment,
-                user: user
-            };
-            this.setState({
-                ...this.state,
-                newComment: newComment
-            })
+            let user;
+            if (typeof this.props.user === 'string' ) {
+                user = JSON.parse(this.props.user);
+            } else {
+                user = this.props.user;
+            }
+            
+            if (this.user) {
+                user = user.user;
+                let newComment = {
+                    ...this.state.newComment,
+                    user: user
+                };
+                this.setState({
+                    ...this.state,
+                    newComment: newComment
+                })
+            }
         }, 1000);
     }
 
@@ -48,7 +55,14 @@ class Comments extends Component {
             user:'',
             comment:''
         };
-        let userid = JSON.parse(this.props.user);
+
+        let userid;
+
+        if (typeof this.props.user === 'string' ) {
+            userid = JSON.parse(this.props.user);
+        } else {
+            userid = this.props.user;
+        }
         userid = userid.id;
         let comment = {
             user: userid,
